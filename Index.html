@@ -1,42 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Evergreen Scents - Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evergreen Scents</title>
+  <style>
+    /* Basic body styling */
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f6f4ef;
+      color: #2f2f2f;
+      min-height: 100vh;
+      background-image: url('forest_background.jpg'); /* optional */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    /* Sidebar vertical on desktop */
+    .sidebar {
+      width: 140px;
+      background-color: rgba(240, 237, 230, 0.95);
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      padding-top: 1rem;
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+    }
+
+    .sidebar .logo {
+      height: 75px;
+      width: auto;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .sidebar nav a {
+      display: block;
+      text-decoration: none;
+      color: #2f2f2f;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background-color: #3b6b3b;
+      color: #fff;
+    }
+
+    /* Main content */
+    .main-content {
+      margin-left: 260px;
+      padding: 2rem;
+      max-width: 1000px;
+      margin-right: auto;
+    }
+
+    /* Checkout buttons */
+    .checkout-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    .checkout-buttons a,
+    .checkout-buttons button {
+      max-width: 120px;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      display: inline-block;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background-color: #3b6b3b;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkout-buttons a:hover,
+    .checkout-buttons button:hover {
+      background-color: #4e8751;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Mobile styles: sidebar on top */
+    @media (max-width: 600px) {
+      /* Sidebar becomes horizontal top bar */
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem 0;
+        box-shadow: none;
+      }
+
+      .sidebar .logo {
+        height: 50px;
+        margin: 0;
+      }
+
+      .sidebar nav {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .sidebar nav a {
+        margin: 0;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      /* Main content no longer has left margin */
+      .main-content {
+        margin-left: 0;
+        padding: 1rem;
+      }
+
+      /* Make buttons narrower to fit top bar if needed */
+      .checkout-buttons a,
+      .checkout-buttons button {
+        max-width: 100px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <img src="logo.jpg" alt="Evergreen Scents Logo" class="logo" />
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About Us</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="#" id="basketButton">Basket</a>
-      </nav>
-    </aside>
 
-    <main class="main-content">
-      <h1>Welcome to Evergreen Scents</h1>
-      <p>
-        Step into the warm and rustic world of <strong>Evergreen Scents</strong>, where every candle and wax melt is
-        <strong>handmade in the heart of the Forest of Dean, England</strong>. Each product is crafted with love,
-        passion, and care — from the first pour to the final packaging.
-      </p>
-      <p>
-        Our scents are rich, long-lasting, and designed to fill your home with comfort. Whether you choose our beautifully shaped candles
-        or our wonderfully fragrant wax melts, you’ll discover why each creation is a little piece of nature’s magic.
-      </p>
-      <p>
-        Enjoy exploring our shop, gallery, and story — and experience the art of handmade fragrance that’s been lovingly
-        perfected for your home.
-      </p>
-    </main>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="logo.jpg" alt="Evergreen Scents Logo" class="logo">
+    <nav>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
   </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Welcome to Evergreen Scents</h1>
+    <p>Fill your home with amazing scents. Explore our hand-crafted candles and wax melts.</p>
+
+    <div class="checkout-buttons">
+      <a href="shop.html">Continue Shopping</a>
+      <button>Pay by Card</button>
+    </div>
+
+    <div class="gallery-grid">
+      <img src="candle1.jpg" alt="Candle 1">
+      <img src="candle2.jpg" alt="Candle 2">
+      <img src="candle3.jpg" alt="Candle 3">
+    </div>
+  </div>
+
 </body>
 </html>

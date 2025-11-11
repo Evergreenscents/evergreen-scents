@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evergreen Scents</title>
   <style>
-    /* Basic body styling */
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
       background-color: #f6f4ef;
       color: #2f2f2f;
       min-height: 100vh;
-      background-image: url('forest_background.jpg'); /* optional */
+      background-image: url('forest_background.jpg');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -100,28 +99,8 @@
       background-color: #4e8751;
     }
 
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.03);
-    }
-
-    /* Mobile styles: sidebar on top */
+    /* Mobile styles: top horizontal bar */
     @media (max-width: 600px) {
-      /* Sidebar becomes horizontal top bar */
       .sidebar {
         position: relative;
         width: 100%;
@@ -149,13 +128,11 @@
         font-size: 0.9rem;
       }
 
-      /* Main content no longer has left margin */
       .main-content {
         margin-left: 0;
         padding: 1rem;
       }
 
-      /* Make buttons narrower to fit top bar if needed */
       .checkout-buttons a,
       .checkout-buttons button {
         max-width: 100px;
@@ -166,10 +143,11 @@
 </head>
 <body>
 
-  <!-- Sidebar -->
+  <!-- Sidebar with menu buttons -->
   <div class="sidebar">
     <img src="logo.jpg" alt="Evergreen Scents Logo" class="logo">
     <nav>
+      <a href="index.html" class="active">Home</a>
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -185,12 +163,6 @@
     <div class="checkout-buttons">
       <a href="shop.html">Continue Shopping</a>
       <button>Pay by Card</button>
-    </div>
-
-    <div class="gallery-grid">
-      <img src="candle1.jpg" alt="Candle 1">
-      <img src="candle2.jpg" alt="Candle 2">
-      <img src="candle3.jpg" alt="Candle 3">
     </div>
   </div>
 

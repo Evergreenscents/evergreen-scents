@@ -1,0 +1,36 @@
+READ ME
+
+Steps to Deploy Online
+
+Option 1 – Free Hosting with Netlify
+
+Zip the EvergreenScents folder.
+
+Go to Netlify
+ and create a free account.
+
+Drag and drop the zip folder into Netlify’s dashboard.
+
+The site will deploy instantly with a live URL.
+
+Option 2 – Free Hosting with GitHub Pages
+
+Create a GitHub repository named EvergreenScents.
+
+Upload all files and folders from above.
+
+Go to the repository settings → Pages → Choose main branch / root folder → Save.
+
+GitHub will provide a live link like https://username.github.io/EvergreenScents/.
+
+Option 3 – Any Other Hosting (e.g., Vercel, Hostinger, cPanel)
+
+Simply upload the full folder as-is via FTP or file manager.
+
+Make sure index.html is in the root so the site opens automatically.
+
+Photos:
+
+<img src="images/candle1.jpg" alt="Rustic candle photo">
+
+

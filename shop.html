@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Evergreen Scents</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fff8;
+      margin: 0;
+      display: flex;
+    }
+
+    nav {
+      width: 240px;
+      background-color: #1a3a1a;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    nav img {
+      height: 75px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      display: block;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2f5c2f;
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 30px;
+      flex-grow: 1;
+    }
+
+    h1 {
+      color: #1a3a1a;
+      text-align: center;
+    }
+
+    .category {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .category button {
+      width: 100%;
+      background-color: #2f5c2f;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s;
+    }
+
+    .category button:hover {
+      background-color: #3c7a3c;
+    }
+
+    .products {
+      display: none;
+      background: #fff;
+      padding: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background-color: #fff;
+    }
+
+    .product h3 {
+      margin: 5px 0;
+    }
+
+    .product select {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    .product button {
+      background-color: #1a3a1a;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product button:hover {
+      background-color: #3a6f3a;
+    }
+
+    .checkout {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .checkout a {
+      text-decoration: none;
+      background-color: #1a3a1a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <img src="logo.jpg" alt="Evergreen Scents Logo">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="basket.html">Basket</a>
+  </nav>
+
+  <main>
+    <h1>Our Products</h1>
+
+    <!-- Candles -->
+    <div class="category">
+      <button onclick="toggleCategory('candles')">Candles</button>
+      <div id="candles" class="products">
+        <div class="product">
+          <h3>Hear No Evil Speak No Evil (Pair) - £15.00</h3>
+	<img src="images/hearnoskull.jpg" alt="Hear No Evil Candles" style="width:150px; height:auto;">
+          <button onclick="addToBasket('Hear No Evil (pair) Candle', 15.00)">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Mini Rose - £1.00</h3>
+	<img src="images/minirose1.jpg" alt="Mini Rose Candles" style="width:150px; height:auto;">
+          <button onclick="addToBasket('Mini Rose', 1.00)">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Rose In Lips - £4.50</h3>
+	<img src="images/roseinlips.jpg" alt="Rose In Lips Candles" style="width:150px; height:auto;">
+          <button onclick="addToBasket('Rose In Lips', 4.50)">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wax Melts -->
+    <div class="category">
+      <button onclick="toggleCategory('waxmelts')">Wax Melts</button>
+      <div id="waxmelts" class="products">
+        <div class="product-grid">
+
+          <h3>Cherry</h3>
+	<img src="images/cherry.jpg" alt="Cherry Wax Melt" style="width:150px; height:auto;">
+          <select id="cherry-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Cherry', 'cherry-options')">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Black Cherry</h3>
+	<img src="images/blackcherry.jpg" alt="Black Cherry Wax Melt" style="width:150px; height:auto;">
+          <select id="blackcherry-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Black Cherry', 'blackcherry-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Vanilla</h3>
+	<img src="images/vanilla.jpg" alt="Vanilla Wax Melt" style="width:150px; height:auto;">
+          <select id="vanilla-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Vanilla', 'vanilla-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Pink Grapefruit</h3>
+	<img src="images/pinkgrapefruit.jpg" alt="Pink Grapefruit Wax Melt" style="width:150px; height:auto;">
+          <select id="pinkgrapefruit-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Pink Grapefruit', 'pinkgrapefruit-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Coconut</h3>
+	<img src="images/coconut.jpg" alt="Coconut Wax Melt" style="width:150px; height:auto;">
+          <select id="coconut-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Coconut', 'coconut-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Chocolate Orange</h3>
+	<img src="images/chocolateorange.jpg" alt="Chocolate Orange Wax Melt" style="width:150px; height:auto;">
+          <select id="chocolateorange-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Chocolate Orange', 'chocolateorange-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Mulled Pear And Cranberry Punch</h3>
+	<img src="images/mulledpearandcranberrypunch.jpg" alt="Mulled Pear And Cranberry Punch Wax Melt" style="width:150px; height:auto;">
+          <select id="mulledpearandcranberrypunch-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Mulled Pear And Cranberry Punch', 'mulledpearand cranberrypunch-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Strawberry And Lily</h3>
+	<img src="images/strawberryandlily.jpg" alt="Strawberry And Lily Wax Melt" style="width:150px; height:auto;">
+          <select id="strawberryandlily-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Strawberry And Lily', 'strawberryandlily-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Orange And Cinnamon</h3>
+	<img src="images/orangeandcinnamon.jpg" alt="Orange And Cinnamon Wax Melt" style="width:150px; height:auto;">
+          <select id="orangeandcinnamon-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Orange And Cinnamon', 'orangeandcinnamon-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Parma Violets</h3>
+	<img src="images/parmaviolets.jpg" alt="Parma Violets Wax Melt" style="width:150px; height:auto;">
+          <select id="parmaviolets-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Parma Violets', 'paarmaviolets-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Candy Floss</h3>	
+	<img src="images/candyfloss.jpg" alt="Candy Floss Wax Melt" style="width:150px; height:auto;">
+          <select id="candyfloss-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Candy Floss', 'candyfloss-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Bubble Gum</h3>
+	<img src="images/bubblegum.jpg" alt="Bubble Gum Wax Melt" style="width:150px; height:auto;">
+          <select id="bubblegum-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Bubble Gum', 'bubblegum-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Bum Bum Cream</h3>
+	<img src="images/bumbumcream.jpg" alt="Bum Bum Cream Wax Melt" style="width:150px; height:auto;">
+          <select id="bumbumcream-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Bum Bum Cream', 'bumbumcream-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Sandalwood</h3>
+	<img src="images/sandalwood.jpg" alt="Sandalwood Wax Melt" style="width:150px; height:auto;">
+          <select id="sandalwood-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Sandalwood', 'sandalwood-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Pumpkin Spice</h3>
+	<img src="images/pumpkinspice.jpg" alt="Pumpkin Spice Wax Melt" style="width:150px; height:auto;">
+          <select id="pumpkinspice-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Pumpkin Spice', 'pumpkinspice-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Dove</h3>
+	<img src="images/dove.jpg" alt="Dove Wax Melt" style="width:150px; height:auto;">
+          <select id="dove-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Dove', 'dove-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Fairy Dust</h3>
+	<img src="images/fairydust.jpg" alt="Fairy Dust Wax Melt" style="width:150px; height:auto;">
+          <select id="fairydust-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Fairy Dust', 'fairydust-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Dreams Stoppables</h3>
+	<img src="images/dreamsstoppables.jpg" alt="Dreams Stoppables Wax Melt" style="width:150px; height:auto;">
+          <select id="dreamsstoppables-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Dreams Stoppables', 'dreamsstoppables-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Fresh Stoppables</h3>
+	<img src="images/freshstoppables.jpg" alt="Fresh Stoppables Wax Melt" style="width:150px; height:auto;">
+          <select id="freshstoppables-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Fresh Stoppables', 'freshstoppables-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Spring Stoppables</h3>
+	<img src="images/springstoppables.jpg" alt="Spring Stoppables Wax Melt" style="width:150px; height:auto;">
+          <select id="springstoppables-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Spring Stoppables', 'springstoppables-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>Lavish Stoppables</h3>
+	<img src="images/lavishstoppables.jpg" alt="Lavish Stoppables Wax Melt" style="width:150px; height:auto;">
+          <select id="lavishstoppables-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('Lavish Stoppables', 'lavishstoppables-options')">Add to Basket</button>
+        </div>
+	<div class="product">
+          <h3>J Choo</h3>
+	<img src="images/jchoo.jpg" alt="J Choo Wax Melt" style="width:150px; height:auto;">
+          <select id="jchoo-options">
+            <option value="6.00">Bag of 10 - £6.00</option>
+            <option value="12.50">Box of 16 - £12.50</option>
+            <option value="15.00">Box of 24 - £15.00</option>
+          </select>
+          <button onclick="addSelected('J Choo', 'jchoo-options')">Add to Basket</button>
+        </div>
+
+
+	
+        <!-- add all other scents the same way -->
+      </div>
+    </div>
+
+    <!-- Jars -->
+    <div class="category">
+      <button onclick="toggleCategory('jars')">Jars</button>
+      <div id="jars" class="products">
+        <div class="product">
+          <h3>150 ml Jar Candle (any scent)- £6.50</h3>
+	<img src="images/150mljar.jpg" alt="150 ml jar (any scent) Jars" style="width:150px; height:auto;">
+          <button onclick="addToBasket('Placeholder Jar Candle', 6.50)">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Pumpkin Jar - £7.00</h3>
+	<img src="images/pumpkinjar.jpg" alt="Pumpkin Jar Jars" style="width:150px; height:auto;">
+          <button onclick="addToBasket('Pumpkin Jar', 7.00)">Add to Basket</button>
+        </div>
+        <div class="product">
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Orders -->
+    <div class="category">
+      <button onclick="toggleCategory('special')">Special Orders</button>
+      <div id="special" class="products">
+        <div class="product">
+          <h3>Custom Candle Order - from £10.00</h3>
+          <button onclick="addToBasket('Custom Candle Order', 10.00)">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Personalised Wax Melt Box - from £15.00</h3>
+          <button onclick="addToBasket('Personalised Wax Melt Box', 15.00)">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Laundry Set - £12.50</h3>
+	<img src="images/laundryset.jpg" alt="Laundry Special Orders" style="width:150px; height:auto;">
+          <button onclick="addToBasket('Laundry Set', 12.50)">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18+ Section -->
+    <div class="category">
+      <button onclick="openAdultSection()">18+ Items</button>
+      <div id="adult" class="products" style="display:none;">
+        <div class="product">
+          <h3>Placeholder 18+ Candle - £12.00</h3>
+          <button onclick="addToBasket('18+ Candle', 12.00)">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Hendue Set - £15.00</h3>
+	<img src="images/hendueset.jpg" alt="Hendue Set 18+ Items" style="width:150px; height:auto;">
+          <button onclick="addToBasket('Hendue Set', 15.00)">Add to Basket</button>
+        </div>
+        <div class="product">
+          <h3>Vagina With Piercing - £6.00</h3>
+	<img src="images/vag1.jpg" alt="Vagina with Piercing 18+ Items" style="width:150px; height:auto;">
+          <button onclick="addToBasket('V**ina With Piercing', 6.00)">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkout">
+      <a href="basket.html">Go to Basket</a>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleCategory(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === "block" ? "none" : "block";
+    }
+
+    function addToBasket(name, price) {
+      let basket = JSON.parse(localStorage.getItem("basket")) || [];
+      basket.push({ name, price });
+      localStorage.setItem("basket", JSON.stringify(basket));
+      alert(name + " added to basket (£" + price.toFixed(2) + ")");
+    }
+
+    function addSelected(name, selectId) {
+      const select = document.getElementById(selectId);
+      const price = parseFloat(select.value);
+      addToBasket(name, price);
+    }
+
+    function openAdultSection() {
+      const confirmAdult = confirm("This section contains products for adults (18+) only. Are you 18 or older?");
+      if (confirmAdult) {
+        document.getElementById('adult').style.display = 'block';
+      } else {
+        alert("You must be over 18 to view this section.");
+      }
+    }
+  </script>
+</body>
+</html>

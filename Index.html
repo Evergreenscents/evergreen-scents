@@ -1,149 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evergreen Scents</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: #f6f4ef;
-      color: #2f2f2f;
-      min-height: 100vh;
-      background-image: url('forest_background.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evergreen Scents</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #f6f4ef;
+    color: #2f2f2f;
+    min-height: 100vh;
+    background-image: url('forest_background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
 
-    /* Sidebar vertical on desktop */
+  /* Sidebar - vertical on desktop */
+  .sidebar {
+    width: 140px;
+    background-color: rgba(240, 237, 230, 0.95);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 1rem;
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+  }
+
+  .sidebar .logo {
+    height: 75px;
+    width: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar nav a {
+    display: block;
+    text-decoration: none;
+    color: #2f2f2f;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .sidebar nav a:hover,
+  .sidebar nav a.active {
+    background-color: #3b6b3b;
+    color: #fff;
+  }
+
+  /* Main content */
+  .main-content {
+    margin-left: 260px;
+    padding: 2rem;
+    max-width: 1000px;
+    margin-right: auto;
+  }
+
+  /* Buttons */
+  .checkout-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .checkout-buttons a,
+  .checkout-buttons button {
+    max-width: 120px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: inline-block;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #3b6b3b;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+
+  .checkout-buttons a:hover,
+  .checkout-buttons button:hover {
+    background-color: #4e8751;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 600px) {
     .sidebar {
-      width: 140px;
-      background-color: rgba(240, 237, 230, 0.95);
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      width: 100%;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap; /* allow buttons to wrap to new line */
       align-items: center;
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      padding-top: 1rem;
-      backdrop-filter: blur(6px);
-      z-index: 1000;
+      height: auto;
+      padding: 0.5rem;
+      box-shadow: none;
+      gap: 5px;
     }
 
     .sidebar .logo {
-      height: 75px;
-      width: auto;
-      margin-bottom: 1rem;
-      border-radius: 8px;
+      height: 50px;
+      margin-right: 10px;
     }
 
     .sidebar nav {
       display: flex;
-      flex-direction: column;
-      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap; /* wrap links if screen is too narrow */
+      gap: 5px;
     }
 
     .sidebar nav a {
-      display: block;
-      text-decoration: none;
-      color: #2f2f2f;
-      font-weight: 600;
-      padding: 0.75rem 1rem;
+      margin: 0;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.85rem;
+      flex: 1 1 auto; /* let links shrink/grow */
       text-align: center;
-      margin-bottom: 5px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .sidebar nav a:hover,
-    .sidebar nav a.active {
-      background-color: #3b6b3b;
-      color: #fff;
-    }
-
-    /* Main content */
     .main-content {
-      margin-left: 260px;
-      padding: 2rem;
-      max-width: 1000px;
-      margin-right: auto;
+      margin-left: 0;
+      padding: 1rem;
     }
 
-    /* Checkout buttons */
+    /* Checkout buttons stack on small screens */
     .checkout-buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 1rem;
+      flex-direction: column; /* stack vertically */
+      align-items: flex-start;
     }
 
     .checkout-buttons a,
     .checkout-buttons button {
-      max-width: 120px;
-      padding: 0.5rem 1rem;
-      text-align: center;
-      display: inline-block;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      background-color: #3b6b3b;
-      color: white;
-      transition: background-color 0.3s ease;
+      max-width: 100%;
+      width: 100%;
+      font-size: 0.9rem;
     }
-
-    .checkout-buttons a:hover,
-    .checkout-buttons button:hover {
-      background-color: #4e8751;
-    }
-
-    /* Mobile styles: top horizontal bar */
-    @media (max-width: 600px) {
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0.5rem 0;
-        box-shadow: none;
-      }
-
-      .sidebar .logo {
-        height: 50px;
-        margin: 0;
-      }
-
-      .sidebar nav {
-        flex-direction: row;
-        gap: 10px;
-      }
-
-      .sidebar nav a {
-        margin: 0;
-        padding: 0.5rem 0.8rem;
-        font-size: 0.9rem;
-      }
-
-      .main-content {
-        margin-left: 0;
-        padding: 1rem;
-      }
-
-      .checkout-buttons a,
-      .checkout-buttons button {
-        max-width: 100px;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <!-- Sidebar with menu buttons -->
+  <!-- Sidebar -->
   <div class="sidebar">
     <img src="logo.jpg" alt="Evergreen Scents Logo" class="logo">
     <nav>
@@ -164,6 +177,7 @@
       <a href="shop.html">Continue Shopping</a>
       <button>Pay by Card</button>
     </div>
+
   </div>
 
 </body>

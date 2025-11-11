@@ -12,7 +12,7 @@
       background-color: #f8fff8;
     }
 
-    /* Sidebar / Navigation */
+    /* Desktop sidebar */
     nav {
       width: 240px;
       background-color: #1a3a1a;
@@ -26,7 +26,6 @@
       align-items: center;
       padding-top: 20px;
       z-index: 1000;
-      transition: all 0.3s ease;
     }
 
     nav img {
@@ -40,8 +39,8 @@
       padding: 10px 20px;
       display: block;
       text-align: center;
-      transition: background 0.3s;
       width: 100%;
+      transition: background 0.3s;
     }
 
     nav a:hover {
@@ -49,7 +48,7 @@
     }
 
     main {
-      margin-left: 240px;
+      margin-left: 240px; /* Desktop content offset for sidebar */
       padding: 30px;
     }
 
@@ -62,15 +61,37 @@
       margin-bottom: 40px;
     }
 
-    /* Responsive: move nav to top on mobile */
+    /* Mobile menu styles */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+    }
+
+    .mobile-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #1a3a1a;
+    }
+
+    .mobile-links a {
+      padding: 10px;
+      text-align: center;
+      border-top: 1px solid #2f5c2f;
+    }
+
+    /* Responsive: move menu to top on mobile */
     @media (max-width: 768px) {
       nav {
         width: 100%;
         height: auto;
         flex-direction: row;
-        justify-content: space-around;
-        padding: 10px 0;
-        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
       }
 
       nav img {
@@ -79,14 +100,21 @@
       }
 
       nav a {
-        padding: 8px 10px;
-        font-size: 14px;
+        display: none; /* hide desktop links on mobile */
+      }
+
+      .menu-toggle {
+        display: block;
       }
 
       main {
         margin-left: 0;
         margin-top: 10px;
         padding: 15px;
+      }
+
+      .mobile-links.show {
+        display: flex;
       }
     }
   </style>
@@ -95,6 +123,17 @@
 
   <nav>
     <img src="logo.jpg" alt="Evergreen Scents Logo">
+    <span class="menu-toggle" onclick="toggleMobileMenu()">☰</span>
+    <div class="mobile-links" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About Us</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="basket.html">Basket</a>
+    </div>
+
+    <!-- Desktop links -->
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
     <a href="gallery.html">Gallery</a>
@@ -138,6 +177,13 @@
       <p>"The wax melts make my home smell amazing." - Sarah K.</p>
     </section>
   </main>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>

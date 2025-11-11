@@ -20,7 +20,7 @@ body {
 
 /* Sidebar menu */
 .sidebar {
-  width: 240px;
+  width: 140px;
   background-color: rgba(240, 237, 230, 0.95);
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
   display: flex;
@@ -260,3 +260,4 @@ button:hover, .add-to-cart:hover {
     padding: 1rem;
   }
 }
+

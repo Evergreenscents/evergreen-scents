@@ -1,42 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Evergreen Scents - Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evergreen Scents</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f8fff8;
+    }
+
+    /* Sidebar / Navigation */
+    nav {
+      width: 240px;
+      background-color: #1a3a1a;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    nav img {
+      height: 75px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      display: block;
+      text-align: center;
+      transition: background 0.3s;
+      width: 100%;
+    }
+
+    nav a:hover {
+      background-color: #2f5c2f;
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 30px;
+    }
+
+    h1, h2 {
+      color: #1a3a1a;
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    /* Responsive: move nav to top on mobile */
+    @media (max-width: 768px) {
+      nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        position: relative;
+      }
+
+      nav img {
+        height: 50px;
+        margin: 0;
+      }
+
+      nav a {
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+
+      main {
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <img src="logo.jpg" alt="Evergreen Scents Logo" class="logo" />
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About Us</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="#" id="basketButton">Basket</a>
-      </nav>
-    </aside>
 
-    <main class="main-content">
+  <nav>
+    <img src="logo.jpg" alt="Evergreen Scents Logo">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="basket.html">Basket</a>
+  </nav>
+
+  <main>
+    <section class="section">
       <h1>Welcome to Evergreen Scents</h1>
-      <p>
-        Step into the warm and rustic world of <strong>Evergreen Scents</strong>, where every candle and wax melt is
-        <strong>handmade in the heart of the Forest of Dean, England</strong>. Each product is crafted with love,
-        passion, and care — from the first pour to the final packaging.
-      </p>
-      <p>
-        Our scents are rich, long-lasting, and designed to fill your home with comfort. Whether you choose our beautifully shaped candles
-        or our wonderfully fragrant wax melts, you’ll discover why each creation is a little piece of nature’s magic.
-      </p>
-      <p>
-        Enjoy exploring our shop, gallery, and story — and experience the art of handmade fragrance that’s been lovingly
-        perfected for your home.
-      </p>
-    </main>
-  </div>
+      <p style="text-align:center;">Filling homes with the scents you love, crafted with care and eco-friendly practices.</p>
+    </section>
+
+    <section class="section">
+      <h2>Featured Products</h2>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+        <div>
+          <img src="images/hearnoskull.jpg" alt="Hear No Evil Candles" style="width:150px; height:auto;">
+          <p style="text-align:center;">Hear No Evil Speak No Evil - £15.00</p>
+        </div>
+        <div>
+          <img src="images/minirose1.jpg" alt="Mini Rose Candles" style="width:150px; height:auto;">
+          <p style="text-align:center;">Mini Rose - £1.00</p>
+        </div>
+        <div>
+          <img src="images/roseinlips.jpg" alt="Rose In Lips Candles" style="width:150px; height:auto;">
+          <p style="text-align:center;">Rose In Lips - £4.50</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>About Us</h2>
+      <p>Evergreen Scents started as a hobby and grew into a business dedicated to filling homes with amazing fragrances. We prioritize eco-friendly methods, recycling wherever possible, and aim to serve everyone including vegans.</p>
+    </section>
+
+    <section class="section">
+      <h2>Testimonials</h2>
+      <p>"Absolutely love these candles!" - Jamie L.</p>
+      <p>"The wax melts make my home smell amazing." - Sarah K.</p>
+    </section>
+  </main>
+
 </body>
 </html>

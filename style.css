@@ -1,1 +1,266 @@
+/* Evergreen Scents Website - Unified Styling */
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #f6f4ef;
+  color: #2f2f2f;
+  display: flex;
+  min-height: 100vh;
+  background-image: url('forest_background.jpg'); /* optional forest image */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Sidebar menu */
+.sidebar {
+  width: 240px;
+  background-color: rgba(240, 237, 230, 0.95);
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  display: fixed;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 1rem;
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+
+  text-align: left;
+  padding: 10px 15px;
+}
+
+.logo {
+  height: 25px; /* one sixth of original 150px */
+  width: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  display: top left;
+}
+
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: #2f2f2f;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: #3b6b3b;
+  color: #fff;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 260px;
+  padding: 2rem;
+  max-width: 1000px;
+  margin-right: auto;
+}
+
+.main-content h1 {
+  color: #3b6b3b;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.main-content p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+button, .add-to-cart {
+  background-color: #3b6b3b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .add-to-cart:hover {
+  background-color: #4e8751;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Testimonials */
+.testimonial {
+  background: rgba(240, 237, 230, 0.8);
+  border-left: 4px solid #3b6b3b;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+#testimonialForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+#testimonialForm textarea {
+  resize: none;
+  height: 100px;
+  font-family: inherit;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#testimonialForm button {
+  align-self: flex-start;
+}
+
+/* Notes and small text */
+.note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Basket summary modal */
+#basketModal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  z-index: 2000;
+  width: 90%;
+  max-width: 500px;
+}
+
+#basketModal h2 {
+  margin-top: 0;
+  color: #3b6b3b;
+}
+
+#basketItems {
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  background: #b33b3b;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Collapsible product sections in shop */
+.collapsible {
+  background-color: #3b6b3b;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: left;
+  border: none;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.collapsible:hover {
+  background-color: #4e8751;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 1rem;
+  background-color: rgba(240, 237, 230, 0.85);
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.product span {
+  font-weight: 500;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: none;
+  }
+
+  .logo {
+    height: 25px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}

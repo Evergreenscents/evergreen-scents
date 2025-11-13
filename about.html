@@ -1,52 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Evergreen Scents</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Evergreen Scents</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      background-color: #fafafa;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #ffffff;
+      width: 220px;
+      min-height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 100;
+    }
+
+    header img {
+      height: 75px;
+      margin-bottom: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 101;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    nav ul li {
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4caf50;
+    }
+
+    main {
+      margin-left: 250px;
+      padding: 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    main h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    main p {
+      max-width: 800px;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      color: #555;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 200px;
+        transition: left 0.3s ease;
+      }
+
+      header.active {
+        left: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      main {
+        margin-left: 0;
+        padding-top: 70px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <img src="logo.jpg" alt="Evergreen Scents Logo" class="logo" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="#" id="basketButton">Basket</a>
-      </nav>
-    </aside>
+  <button class="menu-toggle" id="mobile-menu">☰</button>
+  
+  <header id="sidebar">
+    <img src="logo.jpg" alt="Evergreen Scents Logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="basket.html">Basket</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="main-content">
-      <h1>About Our Family Business</h1>
-      <p>
-        <strong>Evergreen Scents</strong> is a small, family-run business nestled deep within the beautiful
-        <strong>Forest of Dean</strong>. What began as a creative hobby quickly grew into a passion — and that passion
-        became a mission to share the beauty of nature through fragrance and light.
-      </p>
-      <p>
-        Every candle and wax melt we produce is <strong>hand-poured and made to order</strong>. We create unique shapes
-        and designs to suit all tastes — from rustic and elegant styles to fun and custom creations. Each scent is
-        carefully chosen for its strength and beauty, designed to make every room come alive.
-      </p>
-      <p>
-        Please note that all photos are for illustration purposes only — colours and shapes may vary slightly, as each
-        product is handcrafted. However, we promise one thing: you won’t be disappointed.
-      </p>
-      <p>
-        All of our products are <strong>vegan-friendly</strong>, and we do our best to reuse and recycle materials
-        wherever possible. We’re proud to combine quality craftsmanship with an environmentally conscious approach.
-      </p>
-      <p>
-        Occasionally, we host <strong>craft hours for children</strong> in the community, where they can make their own
-        candles to take home — perfect for occasions like <em>Mother’s Day</em> or <em>Christmas</em>. It’s a wonderful
-        way to teach creativity and create heartfelt, handmade gifts.
-      </p>
-    </main>
-  </div>
+  <main>
+    <h1>About Evergreen Scents</h1>
+    <p>
+      Evergreen Scents is a small, family-run business based in the beautiful <strong>Forest of Dean, England</strong>.  
+      What began as a simple passion for creating comforting fragrances has grown into a heartfelt business dedicated to handcrafting candles and wax melts that fill homes with warmth, joy, and nature’s charm.
+    </p>
+
+    <p>
+      Each of our candles and wax melts is <strong>handmade with love</strong>, using only high-quality, vegan-friendly ingredients.  
+      We offer a wide range of fragrances and styles — from rustic candles to elegantly shaped creations — all poured and finished by hand.  
+      Whether you prefer subtle, relaxing scents or bold, uplifting aromas, we craft each piece to perfection so you can experience pure bliss in every burn.
+    </p>
+
+    <p>
+      The images shown across our site are for <strong>illustration purposes</strong> — colours and sizes may vary slightly, as each product is lovingly handmade and unique.  
+      However, we promise that every item you receive will be just as beautiful, fragrant, and full of character as the photos you see.
+    </p>
+
+    <p>
+      Sustainability is at the heart of what we do.  
+      We use <strong>recyclable materials wherever possible</strong>, and we’re proud to say that all of our products are <strong>100% vegan-friendly</strong>.  
+      We believe small steps make a big difference, and we’re always working to create products that are kind to both you and the planet.
+    </p>
+
+    <p>
+      Occasionally, we also host <strong>craft hours for children</strong> — fun, creative sessions where little ones can make their own candles to gift to loved ones on special occasions like <em>Mother’s Day</em> or <em>Christmas</em>.  
+      These experiences are full of laughter, learning, and creativity — leaving each participant with something truly special they can proudly call their own.
+    </p>
+
+    <p>
+      From our family to yours, thank you for supporting a small local business.  
+      We hope Evergreen Scents brings the same warmth and joy into your home that we feel every time we create.
+    </p>
+  </main>
+
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

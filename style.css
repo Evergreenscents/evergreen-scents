@@ -23,7 +23,7 @@ body {
   width: 240px;
   background-color: rgba(240, 237, 230, 0.95);
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  display: flex;
+  display: fixed;
   flex-direction: column;
   align-items: center;
   position: fixed;
@@ -45,7 +45,7 @@ body {
   width: auto;
   margin-bottom: 1rem;
   border-radius: 8px;
-  display: inline-block;
+  display: top left;
 }
 
 
@@ -264,6 +264,7 @@ button:hover, .add-to-cart:hover {
     padding: 1rem;
   }
 }
+
 
 
 

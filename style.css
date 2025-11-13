@@ -36,7 +36,7 @@ body {
 }
 
 .logo {
-  height: 25px; /* Half of original 150px */
+  height: 25px; /* one sixth of original 150px */
   width: auto;
   margin-bottom: 1rem;
   border-radius: 8px;
@@ -257,4 +257,5 @@ button:hover, .add-to-cart:hover {
     padding: 1rem;
   }
 }
+
 

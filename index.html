@@ -3,98 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evergreen Scents</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Evergreen Scents - Home</title>
+  <link rel="stylesheet" href="style.css">
   <style>
+    /* Inline fallback for the menu and layout */
+
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #f8fff8;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      background-color: #fafafa;
+      scroll-behavior: smooth;
     }
 
-    /* Desktop sidebar */
-    nav {
-      width: 240px;
-      background-color: #1a3a1a;
-      color: white;
+    /* Left Menu Section */
+    header {
+      background-color: #ffffff;
+      width: 220px;
+      min-height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
       position: fixed;
       top: 0;
       left: 0;
-      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 20px;
-      z-index: 1000;
+      z-index: 100;
     }
 
-    nav img {
-      height: 75px;
+    header img {
+      height: 75px; /* Half the original 150px size */
       margin-bottom: 20px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: white;
-      padding: 10px 20px;
-      display: block;
-      text-align: center;
-      width: 100%;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #2f5c2f;
-    }
-
-    main {
-      margin-left: 240px; /* Desktop content offset for sidebar */
-      padding: 30px;
-    }
-
-    h1, h2 {
-      color: #1a3a1a;
-      text-align: center;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    /* Mobile menu styles */
-
-</header>
-
+    .menu-toggle {
       display: none;
-      flex-direction: column;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 101;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
       width: 100%;
-      background-color: #1a3a1a;
     }
 
-    .mobile-links a {
-      padding: 10px;
+    nav ul li {
+      margin: 15px 0;
       text-align: center;
-      border-top: 1px solid #2f5c2f;
     }
 
-    /* Responsive: move menu to top on mobile */
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4caf50;
+    }
+
+    /* Main Content */
+    main {
+      margin-left: 250px;
+      padding: 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    main h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    main p {
+      max-width: 700px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Mobile View */
     @media (max-width: 768px) {
-      nav {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
+      header {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 200px;
+        transition: left 0.3s ease;
       }
 
-      nav img {
-        height: 50px;
-        margin: 0;
-      }
-
-      nav a {
-        display: none; /* hide desktop links on mobile */
+      header.active {
+        left: 0;
       }
 
       .menu-toggle {
@@ -103,85 +118,45 @@
 
       main {
         margin-left: 0;
-        margin-top: 10px;
-        padding: 15px;
-      }
-
-      .mobile-links.show {
-        display: flex;
+        padding-top: 70px;
       }
     }
   </style>
 </head>
 <body>
-
-  <nav>
+  <button class="menu-toggle" id="mobile-menu">☰</button>
+  
+  <header id="sidebar">
     <img src="logo.jpg" alt="Evergreen Scents Logo">
-    <span class="menu-toggle" onclick="toggleMobileMenu()">☰</span>
-    <div class="mobile-links" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About Us</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="basket.html">Basket</a>
-    </div>
-
-    <!-- Desktop links -->
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About Us</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="basket.html">Basket</a>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="basket.html">Basket</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <section class="section">
-      <h1>Welcome to Evergreen Scents</h1>
-      <p style="text-align:center;">Filling homes with the scents you love, crafted with care and eco-friendly practices.</p>
-    </section>
-
-    <section class="section">
-      <h2>Featured Products</h2>
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-        <div>
-          <img src="images/hearnoskull.jpg" alt="Hear No Evil Candles" style="width:150px; height:auto;">
-          <p style="text-align:center;">Hear No Evil Speak No Evil - £15.00</p>
-        </div>
-        <div>
-          <img src="images/minirose1.jpg" alt="Mini Rose Candles" style="width:150px; height:auto;">
-          <p style="text-align:center;">Mini Rose - £1.00</p>
-        </div>
-        <div>
-          <img src="images/roseinlips.jpg" alt="Rose In Lips Candles" style="width:150px; height:auto;">
-          <p style="text-align:center;">Rose In Lips - £4.50</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>About Us</h2>
-      <p>Evergreen Scents started as a hobby and grew into a business dedicated to filling homes with amazing fragrances. We prioritize eco-friendly methods, recycling wherever possible, and aim to serve everyone including vegans.</p>
-    </section>
-
-    <section class="section">
-      <h2>Testimonials</h2>
-      <p>"Absolutely love these candles!" - Jamie L.</p>
-      <p>"The wax melts make my home smell amazing." - Sarah K.</p>
-    </section>
+    <h1>Welcome to Evergreen Scents</h1>
+    <p>
+      At <strong>Evergreen Scents</strong>, every candle and wax melt is lovingly handmade and carefully crafted to perfection in the heart of the <strong>Forest of Dean, England</strong>.  
+      Our mission is simple — to fill your home with beautiful, long-lasting fragrances that bring warmth, joy, and calm into your life.  
+      We take pride in using vegan-friendly materials, eco-conscious packaging, and recyclable products wherever possible.  
+      Whether you choose our delicately shaped candles or our irresistibly scented wax melts, you can be sure that each piece is made with love and passion.  
+      <br><br>
+      Discover the scents that speak to you, and let Evergreen Scents bring a touch of handmade magic into your home.
+    </p>
   </main>
 
   <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('show');
-    }
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.toggle('active');
+    });
   </script>
-
 </body>
 </html>
-
-
-
-

@@ -15,6 +15,68 @@
       background-color: #fafafa;
       scroll-behavior: smooth;
     }
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evergreen Scents | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Mobile Menu Button (Hamburger Icon) -->
+  <button class="menu-toggle">☰</button>
+
+  <!-- Sidebar Navigation -->
+  <header>
+    <img src="logo.jpg" alt="Evergreen Scents Logo">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="basket.html">Basket</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="welcome">
+      <h1>Welcome to Evergreen Scents</h1>
+      <p>
+        Nestled in the heart of the Forest of Dean, <strong>Evergreen Scents</strong> is a small, family-run business creating beautifully handmade candles and wax melts.  
+        Every product is carefully crafted to perfection using eco-friendly, vegan-friendly materials and packed with strong, lasting fragrances that fill your home with warmth and comfort.
+      </p>
+      <p>
+        Whether you’re looking for rustic charm, elegant jars, or custom orders, each piece is made with love and attention to detail.  
+        Our mission is simple — to bring joy, relaxation, and a touch of nature into every home.
+      </p>
+      <p>
+        Explore our <a href="shop.html">Shop</a> to find your next favourite scent, or visit our <a href="gallery.html">Gallery</a> to see our creations come to life.
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2025 Evergreen Scents Ltd. Handmade with love in the Forest of Dean, England.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle functionality
+    const toggleButton = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('header');
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
+
 
     /* Left Menu Section */
     header {
@@ -160,3 +222,4 @@
   </script>
 </body>
 </html>
+

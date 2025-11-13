@@ -35,8 +35,7 @@ body {
   z-index: 1000;
 }
 
-/* Logo styling */
-.logo-container {
+
   text-align: left;
   padding: 10px 15px;
 }
@@ -265,6 +264,7 @@ button:hover, .add-to-cart:hover {
     padding: 1rem;
   }
 }
+
 
 
 

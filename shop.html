@@ -1,356 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - Evergreen Scents</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background-color: #f8fff8;
-    }
-
-    /* Sidebar / Top Menu */
-    nav {
-      width: 240px;
-      background-color: #1a3a1a;
-      color: white;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-
-    nav img {
-      height: 75px;
-      margin-bottom: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      padding: 10px 20px;
-      display: block;
-      text-align: center;
-      transition: background 0.3s;
-      width: 100%;
-    }
-
-    nav a:hover {
-      background-color: #2f5c2f;
-    }
-
-    main {
-      margin-left: 240px;
-      padding: 30px;
-      flex-grow: 1;
-    }
-
-    h1 {
-      color: #1a3a1a;
-      text-align: center;
-    }
-
-    .category {
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .category button {
-      width: 100%;
-      background-color: #2f5c2f;
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 18px;
-      cursor: pointer;
-      text-align: left;
-      transition: background 0.3s;
-    }
-
-    .category button:hover {
-      background-color: #3c7a3c;
-    }
-
-    .products {
-      display: none;
-      background: #fff;
-      padding: 15px;
-      border-top: 1px solid #ccc;
-    }
-
-    .product {
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      background-color: #fff;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .product h3 {
-      margin: 5px 0;
-      flex: 1 1 100%;
-    }
-
-    .product img {
-      width: 150px;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    .product select {
-      padding: 5px;
-      margin-right: 10px;
-    }
-
-    .product button {
-      background-color: #1a3a1a;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .product button:hover {
-      background-color: #3a6f3a;
-    }
-
-    .checkout {
-      text-align: right;
-      margin-top: 20px;
-    }
-
-    .checkout a {
-      text-decoration: none;
-      background-color: #1a3a1a;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
-    /* Responsive Sidebar to Top on Mobile */
-    @media (max-width: 768px) {
-      nav {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        position: relative;
-        padding: 10px 0;
-      }
-
-      nav img {
-        height: 50px;
-        margin: 0;
-      }
-
-      nav a {
-        padding: 8px 10px;
-        font-size: 14px;
-      }
-
-      main {
-        margin-left: 0;
-        margin-top: 10px;
-        padding: 15px;
-      }
-
-      .product {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Evergreen Scents</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <nav>
+  <!-- Mobile Menu Button -->
+  <button class="menu-toggle">☰</button>
+
+  <!-- Sidebar Navigation -->
+  <header>
     <img src="logo.jpg" alt="Evergreen Scents Logo">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About Us</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="basket.html">Basket</a>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="basket.html">Basket</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <!-- Main Content -->
   <main>
-    <h1>Our Products</h1>
+    <h1>Our Shop</h1>
+    <p>Explore our hand-poured soy wax creations below. All products are made with care, eco-friendly materials, and natural fragrances.</p>
 
-    <!-- Candles -->
-    <div class="category">
-      <button onclick="toggleCategory('candles')">Candles</button>
-      <div id="candles" class="products">
-        <div class="product">
-          <h3>Hear No Evil Speak No Evil (Pair) - £15.00</h3>
-          <img src="images/hearnoskull.jpg" alt="Hear No Evil Candles">
-          <button onclick="addToBasket('Hear No Evil (pair) Candle', 15.00)">Add to Basket</button>
-        </div>
-        <div class="product">
-          <h3>Mini Rose - £1.00</h3>
-          <img src="images/minirose1.jpg" alt="Mini Rose Candles">
-          <button onclick="addToBasket('Mini Rose', 1.00)">Add to Basket</button>
-        </div>
-        <div class="product">
-          <h3>Rose In Lips - £4.50</h3>
-          <img src="images/roseinlips.jpg" alt="Rose In Lips Candles">
-          <button onclick="addToBasket('Rose In Lips', 4.50)">Add to Basket</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Wax Melts -->
-    <div class="category">
-      <button onclick="toggleCategory('waxmelts')">Wax Melts</button>
-      <div id="waxmelts" class="products">
-
-        <!-- Individual Wax Melts -->
+    <div class="shop-section">
+      <!-- Wax Melts -->
+      <div class="shop-category" onclick="toggleSection('waxmelts')">Wax Melts</div>
+      <div id="waxmelts" class="product-list">
         <div class="product">
           <h3>Cherry</h3>
           <img src="images/cherry.jpg" alt="Cherry Wax Melt">
-          <select id="cherry-options">
+          <select>
             <option value="6.00">Bag of 10 - £6.00</option>
             <option value="12.50">Box of 16 - £12.50</option>
             <option value="15.00">Box of 24 - £15.00</option>
           </select>
-          <button onclick="addSelected('Cherry', 'cherry-options')">Add to Basket</button>
+          <button>Add to Basket</button>
         </div>
 
         <div class="product">
-          <h3>Black Cherry</h3>
-          <img src="images/blackcherry.jpg" alt="Black Cherry Wax Melt">
-          <select id="blackcherry-options">
-            <option value="6.00">Bag of 10 - £6.00</option>
-            <option value="12.50">Box of 16 - £12.50</option>
-            <option value="15.00">Box of 24 - £15.00</option>
-          </select>
-          <button onclick="addSelected('Black Cherry', 'blackcherry-options')">Add to Basket</button>
-        </div>
-
-        <div class="product">
-          <h3>Vanilla</h3>
+          <h3>Vanilla Bean</h3>
           <img src="images/vanilla.jpg" alt="Vanilla Wax Melt">
-          <select id="vanilla-options">
+          <select>
             <option value="6.00">Bag of 10 - £6.00</option>
             <option value="12.50">Box of 16 - £12.50</option>
             <option value="15.00">Box of 24 - £15.00</option>
           </select>
-          <button onclick="addSelected('Vanilla', 'vanilla-options')">Add to Basket</button>
+          <button>Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Candles -->
+      <div class="shop-category" onclick="toggleSection('candles')">Candles</div>
+      <div id="candles" class="product-list">
+        <div class="product">
+          <h3>Lavender Calm</h3>
+          <img src="images/lavender.jpg" alt="Lavender Candle">
+          <select>
+            <option value="8.00">Small - £8.00</option>
+            <option value="12.00">Medium - £12.00</option>
+            <option value="16.00">Large - £16.00</option>
+          </select>
+          <button>Add to Basket</button>
         </div>
 
         <div class="product">
-          <h3>Pink Grapefruit</h3>
-          <img src="images/pinkgrapefruit.jpg" alt="Pink Grapefruit Wax Melt">
-          <select id="pinkgrapefruit-options">
-            <option value="6.00">Bag of 10 - £6.00</option>
-            <option value="12.50">Box of 16 - £12.50</option>
-            <option value="15.00">Box of 24 - £15.00</option>
+          <h3>Woodland Escape</h3>
+          <img src="images/woodland.jpg" alt="Woodland Candle">
+          <select>
+            <option value="8.00">Small - £8.00</option>
+            <option value="12.00">Medium - £12.00</option>
+            <option value="16.00">Large - £16.00</option>
           </select>
-          <button onclick="addSelected('Pink Grapefruit', 'pinkgrapefruit-options')">Add to Basket</button>
+          <button>Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Jars -->
+      <div class="shop-category" onclick="toggleSection('jars')">Jars</div>
+      <div id="jars" class="product-list">
+        <div class="product">
+          <h3>Frosted Winter</h3>
+          <img src="images/frosted.jpg" alt="Frosted Winter Jar">
+          <select>
+            <option value="10.00">Medium Jar - £10.00</option>
+            <option value="14.00">Large Jar - £14.00</option>
+          </select>
+          <button>Add to Basket</button>
         </div>
 
         <div class="product">
-          <h3>Coconut</h3>
-          <img src="images/coconut.jpg" alt="Coconut Wax Melt">
-          <select id="coconut-options">
-            <option value="6.00">Bag of 10 - £6.00</option>
-            <option value="12.50">Box of 16 - £12.50</option>
-            <option value="15.00">Box of 24 - £15.00</option>
+          <h3>Rose Garden</h3>
+          <img src="images/rose.jpg" alt="Rose Garden Jar">
+          <select>
+            <option value="10.00">Medium Jar - £10.00</option>
+            <option value="14.00">Large Jar - £14.00</option>
           </select>
-          <button onclick="addSelected('Coconut', 'coconut-options')">Add to Basket</button>
+          <button>Add to Basket</button>
         </div>
+      </div>
 
+      <!-- Special Orders -->
+      <div class="shop-category" onclick="toggleSection('special')">Special Orders</div>
+      <div id="special" class="product-list">
         <div class="product">
-          <h3>Chocolate Orange</h3>
-          <img src="images/chocolateorange.jpg" alt="Chocolate Orange Wax Melt">
-          <select id="chocolateorange-options">
+          <h3>Custom Gift Box</h3>
+          <img src="images/giftbox.jpg" alt="Custom Gift Box">
+          <select>
+            <option value="20.00">Standard - £20.00</option>
+            <option value="30.00">Deluxe - £30.00</option>
+          </select>
+          <button>Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- 18+ Scents -->
+      <div class="shop-category" onclick="toggleSection('adult')">18+ Scents</div>
+      <div id="adult" class="product-list">
+        <div class="product">
+          <h3>Naughty Nights</h3>
+          <img src="images/naughty.jpg" alt="Naughty Nights">
+          <select>
             <option value="6.00">Bag of 10 - £6.00</option>
             <option value="12.50">Box of 16 - £12.50</option>
-            <option value="15.00">Box of 24 - £15.00</option>
           </select>
-          <button onclick="addSelected('Chocolate Orange', 'chocolateorange-options')">Add to Basket</button>
+          <button>Add to Basket</button>
         </div>
-
-        <!-- Continue all other wax melts as separate products exactly like original code -->
-
       </div>
     </div>
 
-    <!-- Jars -->
-    <div class="category">
-      <button onclick="toggleCategory('jars')">Jars</button>
-      <div id="jars" class="products">
-        <div class="product">
-          <h3>150 ml Jar Candle (any scent) - £6.50</h3>
-          <img src="images/150mljar.jpg" alt="150 ml jar (any scent) Jars">
-          <button onclick="addToBasket('150 ml Jar Candle', 6.50)">Add to Basket</button>
-        </div>
-        <div class="product">
-          <h3>Pumpkin Jar - £7.00</h3>
-          <img src="images/pumpkinjar.jpg" alt="Pumpkin Jar Jars">
-          <button onclick="addToBasket('Pumpkin Jar', 7.00)">Add to Basket</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Special Orders -->
-    <div class="category">
-      <button onclick="toggleCategory('special')">Special Orders</button>
-      <div id="special" class="products">
-        <div class="product">
-          <h3>Custom Candle Order - from £10.00</h3>
-          <button onclick="addToBasket('Custom Candle Order', 10.00)">Add to Basket</button>
-        </div>
-        <div class="product">
-          <h3>Personalised Wax Melt Box - from £15.00</h3>
-          <button onclick="addToBasket('Personalised Wax Melt Box', 15.00)">Add to Basket</button>
-        </div>
-        <div class="product">
-          <h3>Laundry Set - £12.50</h3>
-          <img src="images/laundryset.jpg" alt="Laundry Special Orders">
-          <button onclick="addToBasket('Laundry Set', 12.50)">Add to Basket</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="checkout">
-      <a href="basket.html">Go to Basket</a>
-    </div>
-
+    <footer>
+      <p>© 2025 Evergreen Scents Ltd. All rights reserved.</p>
+    </footer>
   </main>
 
   <script>
-    function toggleCategory(id) {
+    // Toggle mobile menu
+    const toggleButton = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('header');
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    // Toggle category sections
+    function toggleSection(id) {
       const section = document.getElementById(id);
-      section.style.display = section.style.display === "block" ? "none" : "block";
-    }
-
-    function addToBasket(name, price) {
-      let basket = JSON.parse(localStorage.getItem("basket")) || [];
-      basket.push({ name, price });
-      localStorage.setItem("basket", JSON.stringify(basket));
-      alert(name + " added to basket (£" + price.toFixed(2) + ")");
-    }
-
-    function addSelected(name, selectId) {
-      const select = document.getElementById(selectId);
-      const price = parseFloat(select.value);
-      addToBasket(name, price);
+      section.style.display = section.style.display === "grid" ? "none" : "grid";
     }
   </script>
 

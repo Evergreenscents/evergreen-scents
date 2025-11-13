@@ -255,11 +255,48 @@ button:hover, .add-to-cart:hover {
 }
 
 .collapsible-content {
-  display: none;
-  padding: 1rem;
-  background-color: rgba(240, 237, 230, 0.85);
-  border-radius: 6px;
-  margin-top: 0.5rem;
+/* Hide menu by default on mobile */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  background: #fff;
+  transition: left 0.3s ease;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: -250px; /* hidden off-screen */
+    width: 200px;
+    height: 100%;
+    background-color: #f8f8f8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 60px 20px;
+    transition: left 0.3s ease;
+  }
+
+  .nav-list.active {
+    left: 0; /* slide into view */
+  }
+}
+
 }
 
 .product {
@@ -298,5 +335,6 @@ button:hover, .add-to-cart:hover {
     padding: 1rem;
   }
 }
+
 
 

@@ -1,52 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Evergreen Scents</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <div class="container">
-    <aside class="sidebar">
-      <img src="logo.jpg" alt="Evergreen Scents Logo" class="logo" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="#" id="basketButton">Basket</a>
-      </nav>
-    </aside>
+  <title>Your Basket - Evergreen Scents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 
-    <main class="main-content">
-      <h1>About Our Family Business</h1>
-      <p>
-        <strong>Evergreen Scents</strong> is a small, family-run business nestled deep within the beautiful
-        <strong>Forest of Dean</strong>. What began as a creative hobby quickly grew into a passion — and that passion
-        became a mission to share the beauty of nature through fragrance and light.
-      </p>
-      <p>
-        Every candle and wax melt we produce is <strong>hand-poured and made to order</strong>. We create unique shapes
-        and designs to suit all tastes — from rustic and elegant styles to fun and custom creations. Each scent is
-        carefully chosen for its strength and beauty, designed to make every room come alive.
-      </p>
-      <p>
-        Please note that all photos are for illustration purposes only — colours and shapes may vary slightly, as each
-        product is handcrafted. However, we promise one thing: you won’t be disappointed.
-      </p>
-      <p>
-        All of our products are <strong>vegan-friendly</strong>, and we do our best to reuse and recycle materials
-        wherever possible. We’re proud to combine quality craftsmanship with an environmentally conscious approach.
-      </p>
-      <p>
-        Occasionally, we host <strong>craft hours for children</strong> in the community, where they can make their own
-        candles to take home — perfect for occasions like <em>Mother’s Day</em> or <em>Christmas</em>. It’s a wonderful
-        way to teach creativity and create heartfelt, handmade gifts.
-      </p>
-    </main>
-  </div>
+  <style>
+    .basket-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    .checkout-btn {
+      margin-top: 25px;
+      padding: 12px 20px;
+      background: black;
+      color: white;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="images/logo.jpg" class="logo">
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="basket.html">Basket 🛒</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>Your Basket</h1>
+
+<div id="basket-items"></div>
+
+<p class="total" id="subTotal"></p>
+<p class="total">Shipping: £5.00</p>
+<p class="total" id="grandTotal"></p>
+
+<button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let basket = document.getElementById("basket-items");
+let total = 0;
+
+cart.forEach((item, index) => {
+  basket.innerHTML += `
+    <div class="basket-item">
+      <strong>${item.name}</strong><br>
+      ${item.option}<br>
+      £${item.price.toFixed(2)}
+    </div>
+  `;
+  total += item.price;
+});
+
+document.getElementById("subTotal").innerText = 
+  "Subtotal: £" + total.toFixed(2);
+
+let grandTotal = total + 5;
+
+document.getElementById("grandTotal").innerText =
+  "Total including P+P: £" + grandTotal.toFixed(2);
+
+function checkout() {
+  alert("Checkout system ready to connect to payment gateway.\n\nTotal: £" + grandTotal.toFixed(2));
+}
+</script>
+
 </body>
 </html>

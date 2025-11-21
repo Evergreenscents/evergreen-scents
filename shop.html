@@ -1,424 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop - Evergreen Scents</title>
-  
-  <style>
-    }
-  </style>
-   <style
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .product {
-      border: 1px solid #ddd;
-      padding: 12px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .product img {
-      width: 100%;
-      max-height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    select {
-      margin-top: 10px;
-      width: 100%;
-      padding: 6px;
-    }
-
-    .btn {
-      margin-top: 8px;
-      padding: 6px 10px;
-      border: none;
-      background: black;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #adult-section {
-      display: none;
-    }
-
-    #ageCheck {
-      margin: 60px auto;
-      max-width: 400px;
-      padding: 25px;
-      border: 2px solid black;
-      text-align: center;
-      border-radius: 10px;
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <header>
-
-
+  <div class="mobile-nav">
+    <img src="images/logo.jpg" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="basket.html">Basket</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 <div class="container">
-
-<!---------------- WAX MELTS ---------------->
-<div class="category">
   <h2>Wax Melts</h2>
-
   <div class="products">
-
-    <!-- 25 PRODUCTS -->
-    <!-- Just change the name and image later -->
-
-    <!-- COPY/PASTE BLOCK x25 -->
-    <!-- PRODUCT 1-25 -->
-    <!-- START -->
-    <!-- REPEAT THIS BLOCK 25 TIMES -->
-    <!-- Change names later if required -->
-
+    <!-- Example Wax Melt -->
     <div class="product">
-      <img src="images/placeholder.jpg">
+      <img src="images/placeholder.jpg" alt="Wax Melt 1">
       <h4>Wax Melt 1</h4>
-
       <select>
         <option>Bag of 10 - £6.00</option>
         <option>Small Gift Box (16) - £12.50</option>
         <option>Large Gift Box - £15.00</option>
       </select>
-
       <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-<div
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Wax Melt 2</h4>
-
-      <select>
-        <option>Bag of 10 - £6.00</option>
-        <option>Small Gift Box (16) - £12.50</option>
-        <option>Large Gift Box - £15.00</option>
-      </select>
-
-      <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
+      <button class="btn" onclick="addToCart('Wax Melt 1', this.previousElementSibling.previousElementSibling.value, this.previousElementSibling.value)">Add to Basket</button>
     </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Wax Melt 3</h4>
-      <select>
-        <option>Bag of 10 - £6.00</option>
-        <option>Small Gift Box (16) - £12.50</option>
-        <option>Large Gift Box - £15.00</option>
-      </select>
-      <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <!-- DUPLICATE UNTIL YOU HAVE 25 ITEMS -->
-
   </div>
-</div>
 
-
-<!---------------- CANDLES ---------------->
-<div class="category">
   <h2>Candles</h2>
-
   <div class="products">
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Candle 1</h4>
-      <p>Price coming soon</p>
-     <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Candle 2</h4>
-      <p>Price coming soon</p>
-      <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Candle 3</h4>
-      <p>Price coming soon</p>
-    <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-<input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Candle 5</h4>
-      <p>Price coming soon</p>
-      <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
+    <!-- Candles placeholders -->
   </div>
-</div>
 
-
-<!---------------- GIFT SETS ---------------->
-<div class="category">
   <h2>Gift Boxes & Gift Bags</h2>
-
   <div class="products">
+    <!-- Gift placeholders -->
+  </div>
 
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Gift Set 1</h4>
-     <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Gift Set 2</h4>
-   <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Gift Set 3</h4>
-     <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Gift Set 4</h4>
-      <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Gift Set 5</h4>
-      <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
+  <h2>18+ Products</h2>
+  <div id="ageCheck">
+    <p>You must be 18+ to view this section</p>
+    <button class="btn" onclick="confirmAge()">I am over 18</button>
+  </div>
+  <div id="adult-section" class="category">
+    <!-- Adult products -->
   </div>
 </div>
-
-
-<!---------------- 18+ SECTION ---------------->
-
-<h2 style="margin-top:60px">18+ Products</h2>
-
-<div id="ageCheck">
-  <p>You must be 18+ to view this section</p>
-  <button class="btn" onclick="confirmAge()">I am over 18</button>
-  <p style="margin-top:10px; font-size:13px;">If not, please leave this page.</p>
-</div>
-
-<div id="adult-section" class="category">
-
-  <div class="products">
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Adult Product 1</h4>
-      <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-    <div class="product">
-      <img src="images/placeholder.jpg">
-      <h4>Adult Product 2</h4>
-     <input type="number" value="1" min="1" class="qty">
-
-<button class="btn"
-onclick="addToCart(
-  'Wax Melt 1',
-  this.previousElementSibling.previousElementSibling.value,
-  this.previousElementSibling.value
-)">
-Add to Basket
-</button>
-
-    </div>
-
-  </div>
-</div>
-
-</div>  
-
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function addToCart(name, option) {
-
-  let price = option.includes("6.00") ? 6 :
-              option.includes("12.50") ? 12.5 : 15;
-
-  cart.push({
-    name: name,
-    option: option,
-    price: price
-  });
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  alert(name + " added to basket!");
+function addToCart(name, option, qty){
+  let price = option.includes('6.00') ? 6 : option.includes('12.50') ? 12.5 : 15;
+  qty = parseInt(qty);
+  cart.push({name, option, price, qty});
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(qty+' x '+name+' added to basket');
+}
+function confirmAge(){
+  document.getElementById('ageCheck').style.display='none';
+  document.getElementById('adult-section').style.display='block';
 }
 </script>
-
-
 </body>
 </html>
-
-
-
-
-
-

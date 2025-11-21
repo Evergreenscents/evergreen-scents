@@ -254,12 +254,27 @@
 </div>  
 
 <script>
-function confirmAge() {
-  document.getElementById("ageCheck").style.display = "none";
-  document.getElementById("adult-section").style.display = "block";
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, option) {
+
+  let price = option.includes("6.00") ? 6 :
+              option.includes("12.50") ? 12.5 : 15;
+
+  cart.push({
+    name: name,
+    option: option,
+    price: price
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert(name + " added to basket!");
 }
 </script>
 
+
 </body>
 </html>
+
 

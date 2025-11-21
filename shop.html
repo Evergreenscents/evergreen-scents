@@ -1,161 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop | Evergreen Scents</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Shop - Evergreen Scents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Mobile Menu Button -->
-  <button class="menu-toggle">☰</button>
+<header>
+  <img src="images/logo.jpg" class="logo">
 
-  <!-- Sidebar Navigation -->
-  <header>
-    <img src="logo.jpg" alt="Evergreen Scents Logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" class="active">Shop</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="basket.html">Basket</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- Main Content -->
-  <main>
-    <h1>Our Shop</h1>
-    <p>Explore our hand-poured soy wax creations below. All products are made with care, eco-friendly materials, and natural fragrances.</p>
-
-    <div class="shop-section">
-      <!-- Wax Melts -->
-      <div class="shop-category" onclick="toggleSection('waxmelts')">Wax Melts</div>
-      <div id="waxmelts" class="product-list">
-        <div class="product">
-          <h3>Cherry</h3>
-          <img src="images/cherry.jpg" alt="Cherry Wax Melt">
-          <select>
-            <option value="6.00">Bag of 10 - £6.00</option>
-            <option value="12.50">Box of 16 - £12.50</option>
-            <option value="15.00">Box of 24 - £15.00</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-
-        <div class="product">
-          <h3>Vanilla Bean</h3>
-          <img src="images/vanilla.jpg" alt="Vanilla Wax Melt">
-          <select>
-            <option value="6.00">Bag of 10 - £6.00</option>
-            <option value="12.50">Box of 16 - £12.50</option>
-            <option value="15.00">Box of 24 - £15.00</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Candles -->
-      <div class="shop-category" onclick="toggleSection('candles')">Candles</div>
-      <div id="candles" class="product-list">
-        <div class="product">
-          <h3>Lavender Calm</h3>
-          <img src="images/lavender.jpg" alt="Lavender Candle">
-          <select>
-            <option value="8.00">Small - £8.00</option>
-            <option value="12.00">Medium - £12.00</option>
-            <option value="16.00">Large - £16.00</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-
-        <div class="product">
-          <h3>Woodland Escape</h3>
-          <img src="images/woodland.jpg" alt="Woodland Candle">
-          <select>
-            <option value="8.00">Small - £8.00</option>
-            <option value="12.00">Medium - £12.00</option>
-            <option value="16.00">Large - £16.00</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Jars -->
-      <div class="shop-category" onclick="toggleSection('jars')">Jars</div>
-      <div id="jars" class="product-list">
-        <div class="product">
-          <h3>Frosted Winter</h3>
-          <img src="images/frosted.jpg" alt="Frosted Winter Jar">
-          <select>
-            <option value="10.00">Medium Jar - £10.00</option>
-            <option value="14.00">Large Jar - £14.00</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-
-        <div class="product">
-          <h3>Rose Garden</h3>
-          <img src="images/rose.jpg" alt="Rose Garden Jar">
-          <select>
-            <option value="10.00">Medium Jar - £10.00</option>
-            <option value="14.00">Large Jar - £14.00</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Special Orders -->
-      <div class="shop-category" onclick="toggleSection('special')">Special Orders</div>
-      <div id="special" class="product-list">
-        <div class="product">
-          <h3>Custom Gift Box</h3>
-          <img src="images/giftbox.jpg" alt="Custom Gift Box">
-          <select>
-            <option value="20.00">Standard - £20.00</option>
-            <option value="30.00">Deluxe - £30.00</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- 18+ Scents -->
-      <div class="shop-category" onclick="toggleSection('adult')">18+ Scents</div>
-      <div id="adult" class="product-list">
-        <div class="product">
-          <h3>Naughty Nights</h3>
-          <img src="images/naughty.jpg" alt="Naughty Nights">
-          <select>
-            <option value="6.00">Bag of 10 - £6.00</option>
-            <option value="12.50">Box of 16 - £12.50</option>
-          </select>
-          <button>Add to Basket</button>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <p>© 2025 Evergreen Scents Ltd. All rights reserved.</p>
-    </footer>
-  </main>
-
-  <script>
-    // Toggle mobile menu
-    const toggleButton = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('header');
-    toggleButton.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
-
-    // Toggle category sections
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      section.style.display = section.style.display === "grid" ? "none" : "grid";
-    }
-  </script>
+<div class="container">
+  <h1>Our Products</h1>
+  <p>Browse our range of candles, wax melts and seasonal collections.</p>
+</div>
 
 </body>
 </html>

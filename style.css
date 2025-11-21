@@ -74,6 +74,46 @@ nav a:hover {
     padding: 10px 5px;
     font-size: 14px;
   }
+body {
+  background: #fff7fb;
+}
+
+header {
+  background: white;
+}
+
+/* Cute buttons */
+.btn,
+.checkout-btn {
+  background: #ff9ecb;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.btn:hover,
+.checkout-btn:hover {
+  background: #ff78b5;
+}
+
+/* Product cards */
+.product {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+h1, h2, h3, h4 {
+  color: #5a2d41;
+}
+
+/* Basket item */
+.basket-item {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 
 }
+
 

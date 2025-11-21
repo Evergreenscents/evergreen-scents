@@ -12,7 +12,7 @@
     <script>
 function toggleMenu() {
   let menu = document.getElementById("mobileMenu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  menu.style.display = menu.style.display === "fixed" ? "none" : "fixed";
 }
 </script>
 </body>
@@ -20,7 +20,7 @@ function toggleMenu() {
 <body>
 
 <div class="mobile-header">
-  <img src="images/logo.jpg" class="mobile-logo" alt="Evergreen Scents Logo">
+  <img src="images/logo.jpg" class="mobile-logo"
 
   <div class="hamburger" onclick="toggleMenu()">
     <span></span>
@@ -284,6 +284,7 @@ function toggleMenu() {
   </script>
 </body>
 </html>
+
 
 
 
